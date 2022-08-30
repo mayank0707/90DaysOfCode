@@ -1,0 +1,26 @@
+#leetcode problem
+
+Q.) Find the Highest Altitude. 
+You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i and i + 1 for all (0 <= i < n). 
+Return the highest altitude of a point.
+
+Solution- 
+
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int n=gain.length;
+        int[] netGain=new int[n+1];
+        netGain[0]=0;
+        for(int i=0;i<n;i++){
+            netGain[i+1]=netGain[i]+gain[i];
+        }
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<n+1;i++){
+            if(max<netGain[i]){
+                max=netGain[i];
+            }
+        }
+        return max;
+        
+    }
+}
