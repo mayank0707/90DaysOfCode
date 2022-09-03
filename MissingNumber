@@ -16,7 +16,9 @@ Solution- public int missingNumber(int[] nums) {
                 else { //increment the i value if element is at correct index
                     i++;
                 }
-            }	
+            }
+            
+            //search for first missing number
             for(int index=0;index<nums.length;index++){
                 if(nums[index]!=index){
                     return index;
