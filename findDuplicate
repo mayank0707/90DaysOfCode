@@ -1,0 +1,22 @@
+#Leetcode problem- https://leetcode.com/problems/find-the-duplicate-number/
+
+Q.) Find the Duplicate Number.
+    Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+    
+Solution- Trick: The duplicate element will be at the end only.
+
+    public int findDuplicate(int[] nums) {
+        int i=0;
+        while(i<nums.length){
+            int correct=nums[i]-1;
+            if(nums[i]!=nums[correct]){
+                int temp=nums[i];
+                nums[i]=nums[correct];
+                nums[correct]=temp;
+            }
+            else{
+                i++;
+            }
+        }
+        return nums[nums.length-1];
+    }
