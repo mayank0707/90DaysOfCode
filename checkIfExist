@@ -6,7 +6,6 @@ Q.) Given an array arr of integers, check if there exist two indices i and j suc
         0 <= i, j < arr.length
         arr[i] == 2 * arr[j]
  
-
 Solution- 
 
     public boolean checkIfExist(int[] arr) {
