@@ -5,7 +5,6 @@ Q.) Given an integer n, return true if it is a power of two.
     
 Solution- Solved it using Recursion.
 
-
     public boolean isPowerOfTwo(int n) {
         return recursion(n, 0);    
     }
