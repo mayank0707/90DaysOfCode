@@ -1,0 +1,50 @@
+Learnt about HashMap, HashSet in Java.
+
+#LeetCode problem based on Hashmap- https://leetcode.com/problems/sort-array-by-increasing-frequency/
+
+Q.) Given an array of integers nums, sort the array in increasing order based on the frequency of the values. 
+    If multiple values have the same frequency, sort them in decreasing order. Return the sorted array.
+    
+Solution- Used HashMap and Insertion Sort concept to solve.
+
+  public int[] frequencySort(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0 ; i<nums.length; i++){
+            if(map.containsKey(nums[i])){
+                map.put(nums[i], map.get(nums[i])+1);
+            }else{
+                map.put(nums[i], 1);
+            }
+        }
+        int[] sorted = new int[map.size()];
+        int idx = 0;
+        
+        for(int x: map.keySet()){
+            int j = idx-1;
+            if(idx==sorted.length) break;
+            while(j>=0){
+                if(map.get(x)<map.get(sorted[j])){
+                    sorted[j+1] = sorted[j];
+                    j--;
+                }else if(map.get(x)==map.get(sorted[j]) && x>sorted[j]){
+                    sorted[j+1] = sorted[j];
+                    j--;
+                }else{
+                    break;
+                }
+            }
+            sorted[j+1]= x;
+            idx++;
+        }
+        
+        int[] res = new int[nums.length];
+        int res_i = 0;
+        for(int x: sorted){
+            for(int i = 0; i<map.get(x); i++){
+                res[res_i] = x;
+                res_i++;
+            }
+        }
+                                
+        return res;
+    }
