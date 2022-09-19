@@ -1,0 +1,18 @@
+LeetCode problem- https://leetcode.com/problems/the-kth-factor-of-n/
+
+Solution- 
+
+    public int kthFactor(int n, int k) {
+        ArrayList<Integer> list=new ArrayList<>();
+        for(int i=1;i<=n/2;i++){
+            if((n%i)==0){
+                list.add(i);
+            }
+        }
+        list.add(n);
+        if(k>list.size()){
+            return -1;
+        }
+        return list.get(k-1);
+        
+    }
