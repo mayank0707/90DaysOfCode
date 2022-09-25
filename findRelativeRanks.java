@@ -1,7 +1,7 @@
 Based on Sorting:
 Leetcode problem- https://leetcode.com/problems/relative-ranks/
 
-Solution- Using Hashmap 
+Solution- Using Hashmap-
   
   public String[] findRelativeRanks(int[] score) {
         String str[]=new String[score.length];        
