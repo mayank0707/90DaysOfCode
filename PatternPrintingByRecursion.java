@@ -1,14 +1,14 @@
 
 /*
 Print pattern 1-> * * * *
-  				  * * *
-  				  * *
-  				  *
+  		  * * *
+  		  * *
+  		  *
   
 Print pattern 2-> *
-				  * *
-				  * * *
-				  * * * *
+		  * *
+		  * * *
+		  * * * *
 */
 public class PatternPrintingByRecursion {
 
@@ -45,8 +45,6 @@ public class PatternPrintingByRecursion {
 		else {
 			pattern2(row-1,0);
 			System.out.println();
-		}	
-		
+		}		
 	}
-
 }
