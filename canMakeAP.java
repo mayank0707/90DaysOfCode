@@ -7,14 +7,15 @@ Solution-
       
       public boolean canMakeArithmeticProgression(int[] arr) {
         Arrays.sort(arr);
-        int diff=arr[1]-arr[0];
+        int diff=arr[1]-arr[0]; //store the difference between first two elements
         if(arr.length<=2){
             return true;
         }
         for(int i=1;i<arr.length-1;i++){
-            if((arr[i+1]-arr[i])!=diff){
+            if((arr[i+1]-arr[i])!=diff){ //checks if diff is equal or not
                 return false;
             }
         }
-        return true;    
+        return true;  
+       
     }
