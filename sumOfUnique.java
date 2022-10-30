@@ -6,16 +6,15 @@ Q.) You are given an integer array nums. The unique elements of an array are the
 Solution-
   
   public int sumOfUnique(int[] nums) {
-        HashMap<Integer,Integer> map=new HashMap<>();
-        int sum=0;
-        for(int n:nums){
-            if(!map.containsKey(n)){
-                map.put(n,0);
-            }
-            map.put(n, map.get(n) + 1);
+    HashMap<Integer,Integer> map=new HashMap<>();
+    int sum=0;
+    for(int n:nums){
+        if(!map.containsKey(n)){
+            map.put(n,0);
         }
-        System.out.println("HashMap: " + map);
-
+        map.put(n, map.get(n) + 1);
+    }
+    System.out.println("HashMap: " + map);
     Integer value=1;
     // iterate each entry of hashmap
      for(Map.Entry m : map.entrySet()){    
